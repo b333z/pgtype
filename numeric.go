@@ -88,7 +88,7 @@ func (dst *Numeric) Set(src interface{}) error {
 			*dst = Numeric{Status: Present, InfinityModifier: NegativeInfinity}
 			return nil
 		}
-		num, exp, err := parseNumericString(strconv.FormatFloat(float64(value), 'f', -1, 64))
+		num, exp, err := parseNumericString(strconv.FormatFloat(float64(value), 'f', -1, 32))
 		if err != nil {
 			return err
 		}
